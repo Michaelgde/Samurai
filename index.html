@@ -18,6 +18,29 @@
             padding: 1em 0;
             text-align: center;
         }
+        nav {
+            background-color: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            color: #fff;
+            padding: 1em;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
         main {
             padding: 2em;
             max-width: 800px;
@@ -52,10 +75,25 @@
     <header>
         <h1>Welcome to MSE</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="#tutorials">Tutorials</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#templates">Templates</a></li>
+        </ul>
+    </nav>
     <main>
-        <section>
-            <h2>About MSE</h2>
-            <p>MSE is an app that helps GDevelop users to make rhythm games faster. It provides tools and features designed to streamline the process of game creation, making it easier and more efficient for developers to focus on crafting engaging rhythm-based experiences.</p>
+        <section id="tutorials">
+            <h2>Tutorials</h2>
+            <p>Explore our comprehensive tutorials to get started with MSE and GDevelop quickly.</p>
+        </section>
+        <section id="documentation">
+            <h2>Documentation</h2>
+            <p>Find detailed documentation on how to use MSE, including features and setup instructions.</p>
+        </section>
+        <section id="templates">
+            <h2>Templates</h2>
+            <p>Access a variety of templates to kickstart your rhythm game projects and streamline your development process.</p>
         </section>
     </main>
     <footer>
