@@ -3,131 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSE music sheet editor</title>
+    <title>Learn GDevelop</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
             margin: 0;
-            background-color: #1a1a1a;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
             color: #fff;
-            font-family: Arial, sans-serif;
-        }
-
-        .nav {
-            width: 100%;
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        .nav a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
+            padding: 1rem;
             text-align: center;
-            padding: 14px 16px;
+        }
+
+        nav {
+            background: #444;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: #ddd;
             text-decoration: none;
+            margin: 0 15px;
         }
 
-        .nav a:hover {
-            background-color: #ddd;
-            color: black;
+        nav a:hover {
+            color: #fff;
         }
 
-        .header {
-            text-align: center;
-            margin: 20px 0;
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .header h1 {
-            font-size: 3em;
-            animation: float 3s ease-in-out infinite;
+        h1, h2 {
+            color: #333;
         }
 
-        .content {
-            text-align: center;
-            max-width: 800px;
-            margin: 20px;
+        p {
+            line-height: 1.6;
         }
 
-        .footer {
-            margin-top: auto;
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            width: 100%;
-            color: #f2f2f2;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 5px;
+            border-radius: 3px;
         }
 
         .section {
-            display: none;
+            margin-bottom: 2rem;
         }
 
-        .section.active {
-            display: block;
+        .faq {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .faq-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ddd;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .faq-content {
+            display: none;
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #555;
         }
     </style>
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(id).classList.add('active');
-        }
-
-        window.onload = () => {
-            showSection('home');
-        };
-    </script>
 </head>
 <body>
-    <div class="nav">
-        <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('about')">About Us</a>
-        <a href="#" onclick="showSection('template')">Our Games</a>
-        <a href="#" onclick="showSection('contact')">Contact Us</a>
-    </div>
+    <header>
+        <h1>Welcome to GDevelop Guide</h1>
+        <p>Your ultimate guide to creating games without coding using <span class="highlight">GDevelop</span></p>
+    </header>
+    
+    <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#features">Features</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="header">
-        <h1>MSE music sheet editor</h1>
-    </div>
+    <div class="container">
+        <section id="intro" class="section">
+            <h2>Introduction</h2>
+            <p>GDevelop is an open-source, cross-platform game development software that allows users to create 2D games without any programming knowledge. It is accessible to beginners yet powerful enough for experienced developers. With its drag-and-drop interface and events-based system, you can bring your game ideas to life in no time!</p>
+            <button onclick="toggleContent('intro-content')">Read more</button>
+            <p id="intro-content" style="display:none;">GDevelop provides tools for all game genres, from platformers to strategy games, and supports publishing on multiple platforms such as Windows, Mac, Linux, and even Android and iOS. One of the key strengths of GDevelop is its events system, which uses conditions and actions to dictate how game objects behave, eliminating the need for traditional programming languages.</p>
+        </section>
 
-    <div class="content">
-        <div id="home" class="section active">
-            <p>Welcome to Andromeda Studios, where creativity meets innovation. We specialize in developing immersive and engaging games that captivate the imagination. Stay tuned for our latest releases and updates!</p>
-        </div>
+        <section id="features" class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Event-based system:</strong> No coding required; use events to create complex game logic.</li>
+                <li><strong>Behavior editor:</strong> Easily add physics, pathfinding, and other behaviors to your game objects.</li>
+                <li><strong>Multi-platform export:</strong> Export games to Android, iOS, Windows, Mac, and HTML5.</li>
+                <li><strong>Extensive library:</strong> Utilize the built-in asset store and templates to speed up development.</li>
+            </ul>
+            <button onclick="toggleContent('features-content')">Read more</button>
+            <p id="features-content" style="display:none;">The event-based system allows you to create game logic using a visual approach, which makes it easy for beginners to grasp. Additionally, GDevelop's behavior editor lets you add predefined behaviors like 'Platformer' or 'Top-Down Movement' to game objects, further simplifying the process.</p>
+        </section>
 
-        <div id="template" class="section">
-            <h2>About Us</h2>
-            <p>here are some templates you can use for to get started with MSE and gdevelop</p>
-        </div>
+        <section id="tutorials" class="section">
+            <h2>Step-by-Step Tutorials</h2>
+            <p>To get started with GDevelop, follow these tutorials:</p>
+            <ol>
+                <li><strong>Basic Platformer Game:</strong> Learn how to create a simple platformer with jumping mechanics.</li>
+                <li><strong>Top-Down Shooter:</strong> Create a top-down shooter game using pathfinding behaviors.</li>
+                <li><strong>Publishing Your Game:</strong> Steps to export your game to Android and share it with the world.</li>
+            </ol>
+        </section>
 
-        <div id="games" class="section">
-            <h2>Our Games</h2>
-            <p>Discover our exciting portfolio of games, each designed to transport players into fantastical worlds filled with adventure and intrigue. From action-packed thrillers to mind-bending puzzles, we have something for every type of gamer.</p>
-        </div>
+        <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>What is GDevelop?</span>
+                    <span>&#x25BC;</span>
+                </div>
+                <div class="faq-content">
+                    <p>GDevelop is an open-source game development platform designed for everyone. It allows users to create games without writing code by using its intuitive event-based system.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Can I export games for mobile?</span>
+                    <span>&#x25BC;</span>
+                </div>
+                <div class="faq-content">
+                    <p>Yes, GDevelop supports exporting to both Android and iOS, allowing you to create mobile games directly from the platform.</p>
+                </div>
+            </div>
+        </section>
 
-        <div id="contact" class="section">
+        <section id="contact" class="section">
             <h2>Contact Us</h2>
-            <p>If you have any questions, feedback, or would like to collaborate with us, please don't hesitate to reach out. You can contact us at <a href="mailto:info@andromedastudios.com">info@andromedastudios.com</a>.</p>
-        </div>
+            <p>Have questions or need support? Reach out to us:</p>
+            <p>Email: support@gdevelopguide.com</p>
+            <p>Twitter: <a href="https://twitter.com/gdevelop" target="_blank">@gdevelop</a></p>
+        </section>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2024 Andromeda Studios</p>
-    </div>
+    <footer>
+        <p>&copy; 2024 GDevelop Guide. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                element.querySelector('span:last-child').textContent = '▼';
+            } else {
+                content.style.display = 'block';
+                element.querySelector('span:last-child').textContent = '▲';
+            }
+        }
+    </script>
 </body>
-</html>
+                                                                                                                         </html
